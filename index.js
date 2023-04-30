@@ -1,10 +1,8 @@
-import * as dotenv from "dotenv";
 import express, { json, urlencoded } from "express";
 import cors from "cors";
 import products from "./static/products.json" assert { type: "json" };
-dotenv.config();
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = 3001;
 
 app.use(
   cors({
