@@ -1,12 +1,12 @@
 {
-  "версия": 2,
-  "сборки": [
+  "version": 2,
+  "builds": [
     {
       "src": "index.js ",
-      "использовать": "@versel/node"
+      "use": "@versel/node"
     }
   ],
-  "маршруты": [
+  "routes": [
     {
       "src": "/(.*)",
       "dest": "/"
