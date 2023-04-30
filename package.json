@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "server NR-Fish-React",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "start": "node index.js",
     "test": "jest"
@@ -11,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2"
   },
   "devDependencies": {

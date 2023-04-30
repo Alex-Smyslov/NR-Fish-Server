@@ -1,22 +1,24 @@
-const express = require("express");
-const cors = require("cors");
-const products = require("./static/products.json");
+import * as dotenv from "dotenv";
+import express, { json, urlencoded } from "express";
+import cors from "cors";
+import products from "./static/products.json" assert { type: "json" };
+dotenv.config();
 const app = express();
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
 app.use(
   cors({
     origin: "*",
   })
 );
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(json());
+app.use(urlencoded({ extended: false }));
 app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}`);
 });
 
 app.use("/", (req, res) => {
-  res.json({ mesaage: "Hello from Express Server" });
+  res.json({ message: "Hello from Express Server" });
 });
 
 app.get("/catalog", async (req, res) => {
