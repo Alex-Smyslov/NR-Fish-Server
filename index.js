@@ -1,6 +1,6 @@
-import express, { json, urlencoded } from "express";
-import cors from "cors";
-import products from "./static/products.json" assert { type: "json" };
+const express = require("express");
+const cors = require("cors");
+const products = require("./static/products.json");
 const app = express();
 const PORT = 3001;
 
@@ -9,8 +9,8 @@ app.use(
     origin: "*",
   })
 );
-app.use(json());
-app.use(urlencoded({ extended: false }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}`);
 });
