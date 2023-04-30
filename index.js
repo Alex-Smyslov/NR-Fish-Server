@@ -11,14 +11,15 @@ app.use(
 );
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.listen(PORT, () => {
-  console.log(`App listening on port ${PORT}`);
-});
 
-app.use("/", (req, res) => {
-  res.json({ message: "Hello from Express Server" });
+app.get("/", (req, res) => {
+  res.send("Hello from Express Server");
 });
 
 app.get("/catalog", async (req, res) => {
   res.json(products);
+});
+
+app.listen(PORT, () => {
+  console.log(`App listening on port ${PORT}`);
 });
