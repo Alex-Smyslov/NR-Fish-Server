@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const products = require("./static/products.json");
-const products1 = require("./static/products1.json");
+const product1 = require("./static/products1.json");
 const app = express();
 const PORT = 3001;
 
@@ -22,7 +22,7 @@ app.get("/catalog", async (req, res) => {
 });
 
 app.get("/catalog/1", async (req, res) => {
-  res.json(products1);
+  res.json(product1);
 });
 
 app.listen(PORT, () => {
