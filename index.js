@@ -21,6 +21,10 @@ app.get("/catalog", async (req, res) => {
   res.json(products);
 });
 
+app.get("/catalog:id", async (req, res) => {
+  res.json(products[id]);
+});
+
 // app.get("/catalog/1", async (req, res) => {
 //   res.json(product1);
 // });
